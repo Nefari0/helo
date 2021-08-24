@@ -34,18 +34,22 @@ module.exports = {
         const foundUser = await db.user.get_user_by_username([user_name]);
         const user = foundUser[0];
         console.log('find user?',user)
-        // if (!user) {
-        // if (!user) {
-        //     return res.status(401).send('user not found');
-        // }
-        // const isAuthenticated = bcrypt.compareSync(password, user.hash);
+        if (!user) {
+            return res.status(401).send('user not found');
+        }
         const isAuthenticated = bcrypt.compareSync(password, user.password);
         if (!isAuthenticated) {
             return res.status(403).send('Incorrect Password');
         }
         req.session.user = {
             user: user.user_name,
+            d: user.id
         }
         return res.status(200).send(req.session.user)
+    },
+
+    logout: async (req,res) => {
+        req.session.destroy();
+        return res.status(200);
     }
 }
