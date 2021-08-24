@@ -1,12 +1,28 @@
--- post --
--- DROP TABLE helo_posts
--- CREATE TABLE helo_posts(
---     author_id INTEGER,
---     title text,
---     img text,
---     content text,
---     date_created timestamp
--- )
+---- pending delete ----
+-- CREATE TABLE helo_users (
+--     id SERIAL PRIMARY KEY,
+--     user_name VARCHAR(50) NOT NULL,
+--     hash text NOT NULL,
+--     profile_pic TEXT
+--   );
+-----------------------
+-- CREATE TABLE helo_users (
+--     id SERIAL PRIMARY KEY,
+--     user_name VARCHAR(20) NOT NULL,
+--     password VARCHAR(250) NOT NULL,
+--     profile_pic TEXT
+--   );
+-- insert into helo_users (user_name,password,profile_pic)
+-- values ('myname','pass','pictext')
 
--- insert into helo_posts (author_id, title, img, content, date_created)
--- values ('dummy id','This is The Title','image001','this is the text of the post that Im writing','2021-02-18T00:00:00.000Z')
+-- CREATE TABLE helo_posts (
+--   id SERIAL PRIMARY KEY,
+--   title VARCHAR(45) NOT NULL,
+--   content TEXT,
+--   img TEXT,
+--   author_id INTEGER 
+-- );
+
+-- SELECT *
+-- FROM helo_posts hp
+-- JOIN helo_users hu ON hu.id = hp.author_id
