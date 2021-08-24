@@ -1,0 +1,12 @@
+-- post --
+-- DROP TABLE helo_posts
+-- CREATE TABLE helo_posts(
+--     author_id INTEGER,
+--     title text,
+--     img text,
+--     content text,
+--     date_created timestamp
+-- )
+
+-- insert into helo_posts (author_id, title, img, content, date_created)
+-- values ('dummy id','This is The Title','image001','this is the text of the post that Im writing','2021-02-18T00:00:00.000Z')
