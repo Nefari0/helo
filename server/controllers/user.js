@@ -43,7 +43,7 @@ module.exports = {
         }
         req.session.user = {
             user: user.user_name,
-            d: user.id
+            id: user.id
         }
         return res.status(200).send(req.session.user)
     },
@@ -51,5 +51,12 @@ module.exports = {
     logout: async (req,res) => {
         req.session.destroy();
         return res.status(200);
+    },
+
+    getUser: async (req,res) => {
+        const db = req.app.get('db')
+        const { user_name } = req.body
+        const foundUser = await db.user.get_user_by_username([user_name]);
+        return res.status(200).send(foundUser)
     }
 }
