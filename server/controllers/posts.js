@@ -1,7 +1,10 @@
 module.exports = {
     readPosts: async (req, res) => {
-      let { id } = req.session.user;
+      // console.log('req',req)
+      // let { id } = req.session.user;
+      let { id } = req.body
       let { mine, search, oldest } = req.query;
+      console.log('req.query',req.query)
       const db = await req.app.get('db')
       if (mine && !search) {
         if (oldest) {
