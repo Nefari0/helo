@@ -29,9 +29,9 @@ app.post('/api/auth/logout', userCtrl.logout);
 // //Post Endpoints
 // test end points http://localhost:4000/api/posts?mine=6&search=new
 app.get('/api/posts', postCtrl.readPosts);
-// app.post('/api/post', postCtrl.createPost);
-// app.get('/api/post/:id', postCtrl.readPost);
-// app.delete('/api/post/:id', postCtrl.deletePost)
+app.post('/api/post', postCtrl.createPost);
+app.get('/api/post/:id', postCtrl.readPost);
+app.delete('/api/post/:id', postCtrl.deletePost)
 
 massive({
     connectionString: CONNECTION_STRING,
