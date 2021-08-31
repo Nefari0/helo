@@ -55,7 +55,8 @@ module.exports = {
 
     getUser: async (req,res) => {
         const db = req.app.get('db')
-        const { user_name } = req.body
+        console.log('req.params',req.params)
+        const { user_name } = req.params
         const foundUser = await db.user.get_user_by_username([user_name]);
         return res.status(200).send(foundUser)
     }

@@ -1,6 +1,6 @@
-
+import React from 'react' 
 import { Switch, Route } from 'react-router-dom'
-// import { HashRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import Post from './Components/Post/Post'
 // import Nav from './Components/Nav/Nav'
 import Auth from './Components/Auth/Auth'
