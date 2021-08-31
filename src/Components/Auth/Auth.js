@@ -7,7 +7,7 @@ class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      user_name: '',
       password: '',
       errorMsg: ''
     }
@@ -24,7 +24,7 @@ class Auth extends Component {
   login() {
     axios.post('/api/auth/login', this.state)
       .then(res => {
-        //code here
+        this.props.history.push() // marked
       })
       .catch(err => {
         console.log(err)
@@ -35,7 +35,7 @@ class Auth extends Component {
   register() {
     axios.post('/api/auth/register', this.state)
       .then(res => {
-        //code here
+        this.props.history.push() // marked
       })
       .catch(err => {
         console.log(err)
@@ -46,7 +46,7 @@ class Auth extends Component {
   closeErrorMessage = () => {
     this.setState({
       errorMsg: false, 
-      username: '', 
+      user_name: '', 
       password: ''
     })
   }
@@ -60,7 +60,7 @@ class Auth extends Component {
           {this.state.errorMsg && <h3 className='auth-error-msg'>{this.state.errorMsg} <span onClick={this.closeErrorMessage}>X</span></h3>}
           <div className='auth-input-box'>
             <p>Username:</p>
-            <input value={this.state.username} onChange={e => this.handleChange('username', e.target.value)} />
+            <input value={this.state.user_name} onChange={e => this.handleChange('user_name', e.target.value)} />
           </div>
           <div className='auth-input-box'>
             <p>Password:</p>
