@@ -27,10 +27,12 @@
     "nodemon": "^2.0.12",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-redux": "^7.2.4",
+    "react-redux": "^7.2.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "redux": "^4.1.1"
+    "redux": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-promise-middleware": "^6.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
