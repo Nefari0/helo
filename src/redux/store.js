@@ -6,10 +6,9 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 const rootReducer = combineReducers({
     // characters: breakingBadReducer,
-    user: reducer,
+    user: reducer
     // projects: projectsReducer,
     // models: modelsReducer
-  
   })
   
   export default createStore(

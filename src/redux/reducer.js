@@ -12,6 +12,7 @@ const UPDATE_USER = "UPDATE_USER"
 const LOGOUT = "LOGOUT"
 
 export function updateUser(user_name,profile_pic) {
+    console.log('from redux',user_name)
     return {
         type: UPDATE_USER,
         // payload: axios.post('/api/auth/login', {user_name,password})

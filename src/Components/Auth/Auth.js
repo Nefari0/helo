@@ -25,9 +25,11 @@ class Auth extends Component {
   }
 
   login() {
+    const { user_name, password } = this.state
     axios.post('/api/auth/login', this.state)
       .then(res => {
-        this.props.history.push() // marked
+        this.props.history.push("/dash") // marked
+        // this.props.updateUser(res.data)
       })
       .catch(err => {
         console.log(err)
@@ -38,7 +40,7 @@ class Auth extends Component {
   register() {
     axios.post('/api/auth/register', this.state)
       .then(res => {
-        this.props.history.push() // marked
+        this.props.history.push("/dash") // marked
       })
       .catch(err => {
         console.log(err)
@@ -80,4 +82,4 @@ class Auth extends Component {
 }
 
 // export default Auth;
-export default connect(null, {updateUser})
+export default withRouter(connect(null, {updateUser})(Auth))
