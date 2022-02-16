@@ -1,0 +1,1 @@
+DELETE FROM d_user_admin_message WHERE message_id = $1
